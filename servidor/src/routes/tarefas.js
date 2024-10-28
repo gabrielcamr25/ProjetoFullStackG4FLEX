@@ -3,7 +3,7 @@ const router = express.Router()
 const db = require('../dataBase/db')
 
 router.get('/', (req, res) => {
-  db.query('SELECT * FROM tarefas', (err, results) => {
+  db.query('SELECT * FROM Tarefa', (err, results) => {
       if (err) {
           return res.status(500).json(err);
       }
@@ -13,12 +13,13 @@ router.get('/', (req, res) => {
 
 // Rota para adicionar uma nova tarefa
 router.post('/', (req, res) => {
-  const { tarefa } = req.body;
-  db.query('INSERT INTO tarefas (tarefa) VALUES (?)', [tarefa], (err, results) => {
+  console.log(req.body)
+  const { nome } = req.body;
+  db.query('INSERT INTO Tarefa (nome) VALUES (?)', [nome], (err, results) => {
       if (err) {
           return res.status(500).json(err);
       }
-      res.status(201).json({ id: results.insertId, tarefa });
+      res.status(201).json({ id: results.insertId, nome });
   });
 });
 
