@@ -11,9 +11,7 @@ function App() {
              <AdicionarTarefas /> 
              <ExibirTarefas/> 
             </div>
-            <div className='componente3'>
-
-            </div>
+            
     </div>
     
 
