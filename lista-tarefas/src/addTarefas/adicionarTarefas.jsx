@@ -7,7 +7,7 @@ function AdicionarTarefas() {
     if (!nome) return;
 
     try {
-      const response = await fetch('http://localhost:3000/tarefas', {
+      const response = await fetch('http://localhost:3001/tarefas', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

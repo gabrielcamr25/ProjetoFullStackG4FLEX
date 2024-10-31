@@ -6,7 +6,7 @@ function ExibirTarefas() {
   const buscarTarefas = async () => {
     try {
     
-      const response = await fetch('http://localhost:3000/tarefas');
+      const response = await fetch('http://localhost:3001/tarefas');
       const data = await response.json();
       setTarefas(data);
     } catch (error) {
